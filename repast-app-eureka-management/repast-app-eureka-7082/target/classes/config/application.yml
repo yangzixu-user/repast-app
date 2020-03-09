@@ -1,0 +1,12 @@
+server:
+  port: 7082
+  servlet:
+    context-path: /
+eureka:
+  instance:
+    hostname: eureka2
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka1:7081,http://eureka3:7083
