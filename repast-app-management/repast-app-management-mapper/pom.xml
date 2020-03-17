@@ -20,7 +20,6 @@
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
         </dependency>
-
         <!--
             分页插件
         -->
@@ -29,5 +28,6 @@
             <artifactId>pagehelper-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
+
 
 </project>

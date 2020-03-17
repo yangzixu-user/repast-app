@@ -10,4 +10,4 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://eureka2:7082,http://eureka3:7083
+      defaultZone: http://eureka2:7082/eureka,http://eureka3:7083/eureka

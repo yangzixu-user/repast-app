@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>repast-app-consumer-management</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>repast-app-memberinfo-consumer-6081</module>
+    </modules>
 
 
 </project>

@@ -2,6 +2,7 @@ package com.aaa.lee.repast.base;
 
 import org.springframework.stereotype.Controller;
 import static com.aaa.lee.repast.status.LoginStatus.*;
+import static com.aaa.lee.repast.status.StatusEnums.*;
 
 /**
  * @ClassName BaseContorller
@@ -28,7 +29,7 @@ public class BaseController {
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 20:59
      */
-    protected ResultData success(){
+    protected ResultData LoginSuccess(){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_SUCCESS.getCode());
         resultData.setMsg(LOGIN_SUCCESS.getMsg());
@@ -43,7 +44,7 @@ public class BaseController {
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 21:02
      */
-    protected ResultData success(String msg){
+    protected ResultData LoginSuccess(String msg){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_SUCCESS.getCode());
         resultData.setMsg(msg);
@@ -57,7 +58,7 @@ public class BaseController {
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 21:07
      */
-    protected ResultData success(String msg,String detail){
+    protected ResultData LoginSuccess(String msg,String detail){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_SUCCESS.getCode());
         resultData.setMsg(msg);
@@ -72,7 +73,7 @@ public class BaseController {
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 21:13
      */
-    protected ResultData success(Object data){
+    protected ResultData LoginSuccess(Object data){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_SUCCESS.getCode());
         resultData.setMsg(LOGIN_SUCCESS.getMsg());
@@ -87,7 +88,7 @@ public class BaseController {
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 21:17
      */
-    protected ResultData success(String msg , Object data){
+    protected ResultData LoginSuccess(String msg , Object data){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_SUCCESS.getCode());
         resultData.setMsg(msg);
@@ -102,7 +103,7 @@ public class BaseController {
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 21:20
      */
-    protected ResultData success(String msg,String detail ,Object data){
+    protected ResultData LoginSuccess(String msg,String detail ,Object data){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_SUCCESS.getCode());
         resultData.setMsg(msg);
@@ -118,7 +119,7 @@ public class BaseController {
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 21:23
      */
-    protected ResultData failed(){
+    protected ResultData LoginFailed(){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_FAILED.getCode());
         resultData.setMsg(LOGIN_FAILED.getMsg());
@@ -127,12 +128,12 @@ public class BaseController {
     /**
      * @Author Adam
      * @Description
-     *      登录失败，自定义消息
+     *      登录失败，使用自定义消息
      * @Parme: [msg]
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 21:25
      */
-    protected ResultData failed(String msg){
+    protected ResultData LoginFailed(String msg){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_FAILED.getCode());
         resultData.setMsg(msg);
@@ -141,12 +142,12 @@ public class BaseController {
     /**
      * @Author Adam
      * @Description
-     *      登录失败，自定义解释说明
+     *      登录失败，使用自定义消息，自定义解释说明
      * @Parme: [msg, detail]
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 21:27
      */
-    protected ResultData failed(String msg,String detail){
+    protected ResultData LoginFailed(String msg,String detail){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_FAILED.getCode());
         resultData.setMsg(msg);
@@ -156,12 +157,12 @@ public class BaseController {
     /**
      * @Author Adam
      * @Description
-     *      登录失败，自定义返回数据
+     *      登录失败，使用系统消息，自定义返回数据
      * @Parme: [msg, detail]
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 21:27
      */
-    protected ResultData failed(Object data){
+    protected ResultData LoginFailed(Object data){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_FAILED.getCode());
         resultData.setMsg(LOGIN_FAILED.getMsg());
@@ -176,7 +177,7 @@ public class BaseController {
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 21:27
      */
-    protected ResultData failed(String msg,Object data){
+    protected ResultData LoginFailed(String msg,Object data){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_FAILED.getCode());
         resultData.setMsg(msg);
@@ -186,14 +187,160 @@ public class BaseController {
     /**
      * @Author Adam
      * @Description
-     *      登录失败，自定义解释说明
+     *      登录失败，使用自定义消息，自定义解释说明，自定义返回对象
      * @Parme: [msg, detail]
      * @return : com.aaa.lee.repast.base.ResultData
      * @Date: 2020/3/9 21:27
      */
-    protected ResultData failed(String msg,String detail,Object data){
+    protected ResultData LoginFailed(String msg,String detail,Object data){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_FAILED.getCode());
+        resultData.setMsg(msg);
+        resultData.setDetail(detail);
+        resultData.setData(data);
+        return resultData;
+    }
+    /**
+     * @Author Adam
+     * @Description
+     *      操作成功，返回系统消息
+     * @Parme: []
+     * @return : com.aaa.lee.repast.base.ResultData
+     * @Date: 2020/3/17 20:09
+     */
+    protected ResultData operationSuccess(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(SUCCESS.getCode());
+        resultData.setMsg(SUCCESS.getMsg());
+        return resultData;
+    }
+    /**
+     * @Author Adam
+     * @Description
+     *      操作成功，返回自定义消息
+     * @Parme: []
+     * @return : com.aaa.lee.repast.base.ResultData
+     * @Date: 2020/3/17 20:09
+     */
+    protected ResultData operationSuccess(String msg){
+        ResultData resultData = new ResultData();
+        resultData.setCode(SUCCESS.getCode());
+        resultData.setMsg(msg);
+        return resultData;
+    }
+    /**
+     * @Author Adam
+     * @Description
+     *      操作成功，使用系统消息，自定义返回值
+     * @Parme: []
+     * @return : com.aaa.lee.repast.base.ResultData
+     * @Date: 2020/3/17 20:09
+     */
+    protected ResultData operationSuccess(Object data){
+        ResultData resultData = new ResultData();
+        resultData.setCode(SUCCESS.getCode());
+        resultData.setData(data);
+        return resultData;
+    }
+    /**
+     * @Author Adam
+     * @Description
+     *      操作成功，使用自定义消息，自定义返回值
+     * @Parme: []
+     * @return : com.aaa.lee.repast.base.ResultData
+     * @Date: 2020/3/17 20:09
+     */
+    protected ResultData operationSuccess(String msg,Object data){
+        ResultData resultData = new ResultData();
+        resultData.setCode(SUCCESS.getCode());
+        resultData.setMsg(msg);
+        resultData.setData(data);
+        return resultData;
+    }
+    /**
+     * @Author Adam
+     * @Description
+     *      操作失败，使用系统消息
+     * @Parme: []
+     * @return : com.aaa.lee.repast.base.ResultData
+     * @Date: 2020/3/9 21:23
+     */
+    protected ResultData operationFailed(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(FAILED.getCode());
+        resultData.setMsg(FAILED.getMsg());
+        return resultData;
+    }
+    /**
+     * @Author Adam
+     * @Description
+     *      操作失败，使用自定义消息
+     * @Parme: [msg]
+     * @return : com.aaa.lee.repast.base.ResultData
+     * @Date: 2020/3/9 21:25
+     */
+    protected ResultData operationFailed(String msg){
+        ResultData resultData = new ResultData();
+        resultData.setCode(FAILED.getCode());
+        resultData.setMsg(msg);
+        return resultData;
+    }
+    /**
+     * @Author Adam
+     * @Description
+     *      操作失败，使用自定义消息，自定义解释说明
+     * @Parme: [msg, detail]
+     * @return : com.aaa.lee.repast.base.ResultData
+     * @Date: 2020/3/9 21:27
+     */
+    protected ResultData operationFailed(String msg,String detail){
+        ResultData resultData = new ResultData();
+        resultData.setCode(FAILED.getCode());
+        resultData.setMsg(msg);
+        resultData.setDetail(detail);
+        return resultData;
+    }
+    /**
+     * @Author Adam
+     * @Description
+     *      操作失败，使用系统消息，自定义返回数据
+     * @Parme: [msg, detail]
+     * @return : com.aaa.lee.repast.base.ResultData
+     * @Date: 2020/3/9 21:27
+     */
+    protected ResultData operationFailed(Object data){
+        ResultData resultData = new ResultData();
+        resultData.setCode(FAILED.getCode());
+        resultData.setMsg(FAILED.getMsg());
+        resultData.setData(data);
+        return resultData;
+    }
+    /**
+     * @Author Adam
+     * @Description
+     *      操作失败，自定义解释说明,自定义返回数据
+     * @Parme: [msg, detail]
+     * @return : com.aaa.lee.repast.base.ResultData
+     * @Date: 2020/3/9 21:27
+     */
+    protected ResultData operationFailed(String msg,Object data){
+        ResultData resultData = new ResultData();
+        resultData.setCode(FAILED.getCode());
+        resultData.setMsg(msg);
+        resultData.setData(data);
+        return resultData;
+    }
+    /**
+     * @Author Adam
+     * @Description
+     *      操作失败，使用自定义消息，自定义解释说明，自定义返回对象
+     * @Parme: [msg, detail]
+     * @return : com.aaa.lee.repast.base.ResultData
+     * @Date: 2020/3/9 21:27
+     */
+    protected ResultData operationFailed(String msg,String detail,Object data){
+        ResultData resultData = new ResultData();
+        resultData.setCode(FAILED.getCode());
         resultData.setMsg(msg);
         resultData.setDetail(detail);
         resultData.setData(data);

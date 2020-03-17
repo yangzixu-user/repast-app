@@ -17,6 +17,7 @@
         <module>repast-app-management</module>
         <module>repast-app-consumer-management</module>
 
+
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -202,13 +203,39 @@
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>1.2.12</version>
             </dependency>
-
             <dependency>
                 <groupId>javax.persistence</groupId>
                 <artifactId>persistence-api</artifactId>
                 <version>1.0.2</version>
             </dependency>
+            <!-- Objenesis-->
+            <dependency>
+                <groupId>org.objenesis</groupId>
+                <artifactId>objenesis</artifactId>
+                <version>2.1</version>
+            </dependency>
+            <!--高性能反射工具类-->
+            <dependency>
+                <groupId>com.esotericsoftware</groupId>
+                <artifactId>reflectasm</artifactId>
+                <version>1.11.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+    <!--指定jdk版本-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>
